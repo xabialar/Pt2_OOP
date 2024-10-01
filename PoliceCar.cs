@@ -1,16 +1,22 @@
 ﻿namespace Practice1
 {
-    class PoliceCar : Vehicle
+    class PoliceCar : MatricVehicle
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances
-        private const string typeOfVehicle = "Police Car"; 
+        private const string typeOfVehicle = "Police Car";
         private bool isPatrolling;
         private SpeedRadar speedRadar;
+        private string followedPlate;
+        private bool isFollowing;
+        private PoliceStation policeStation;
 
-        public PoliceCar(string plate) : base(typeOfVehicle, plate)
+        public PoliceCar(string plate, PoliceStation policeStation) : base(typeOfVehicle, plate)
         {
             isPatrolling = false;
+            followedPlate = "";
+            isFollowing = false;
             speedRadar = new SpeedRadar();
+            this.policeStation = policeStation;
         }
 
         public void UseRadar(Vehicle vehicle)
@@ -20,6 +26,10 @@
                 speedRadar.TriggerRadar(vehicle);
                 string meassurement = speedRadar.GetLastReading();
                 Console.WriteLine(WriteMessage($"Triggered radar. Result: {meassurement}"));
+                if (meassurement== "Catched above legal speed.")
+                {
+                    NotifyPoliceStation(vehicle.GetPlate());
+                }
             }
             else
             {
@@ -65,6 +75,20 @@
             {
                 Console.WriteLine(speed);
             }
+        }
+        public void StartFollowing(string plate)
+        {
+            isFollowing = true;
+            followedPlate = plate;
+        }
+        public void StopFollowing()
+        {
+            isFollowing = false;
+        }
+
+        public void NotifyPoliceStation(string plate)
+        {
+            policeStation.OrderFollowPlate(plate);
         }
     }
 }
