@@ -5,9 +5,11 @@ namespace Practice1
 	{
 		private List<PoliceCar> policeCars;
 		private bool alert;
+		private string id;
 
-		public PoliceStation()
+		public PoliceStation(string id)
 		{
+			this.id = id;
 			alert = false;
 			policeCars = new List<PoliceCar>();
 		}
@@ -20,22 +22,37 @@ namespace Practice1
 		{
 			return alert;
 		}
-
-		public void AddPoliceCar(PoliceCar police)
+        public string GetId()
+        {
+            return id;
+        }
+        public override string ToString()
+        {
+            return $"Police Station with ID {GetId()}";
+        }
+        public void AddPoliceCar(PoliceCar police)
 		{
-			policeCars.Add(police);
+            Console.WriteLine(WriteMessage($"{police.GetPlate()}"));
+            policeCars.Add(police);
 		}
 		public void OrderFollowPlate(string plate)
 		{
-			foreach (PoliceCar police in policeCars)
+            Console.WriteLine(WriteMessage($"The following police cars, which were patrolling, follow the plate: {plate}:"));
+
+            foreach (PoliceCar police in policeCars)
 			{
 				if (police.IsPatrolling())
 				{
+					Console.WriteLine($"{police.GetPlate()}");
 					police.StartFollowing(plate);
 				}
 			}
 		}
+        public string WriteMessage(string message)
+        {
+            return $"{this} : {message}";
+        }
 
-	}
+    }
 }
 

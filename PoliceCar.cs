@@ -115,6 +115,7 @@
 
         public void NotifyPoliceStation(string plate)
         {
+            Console.WriteLine(WriteMessage($"Follow plate: {plate}"));
             policeStation.OrderFollowPlate(plate);
         }
     }

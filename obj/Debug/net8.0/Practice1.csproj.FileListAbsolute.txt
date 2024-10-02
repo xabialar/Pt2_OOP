@@ -3,3 +3,13 @@
 /Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/obj/Debug/net8.0/Practice1.AssemblyInfo.cs
 /Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/obj/Debug/net8.0/Practice1.csproj.CoreCompileInputs.cache
 /Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/obj/Debug/net8.0/Practice1.sourcelink.json
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/bin/Debug/net8.0/Practice1
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/bin/Debug/net8.0/Practice1.deps.json
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/bin/Debug/net8.0/Practice1.runtimeconfig.json
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/bin/Debug/net8.0/Practice1.dll
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/bin/Debug/net8.0/Practice1.pdb
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/obj/Debug/net8.0/Practice1.dll
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/obj/Debug/net8.0/refint/Practice1.dll
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/obj/Debug/net8.0/Practice1.pdb
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/obj/Debug/net8.0/Practice1.genruntimeconfig.cache
+/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/obj/Debug/net8.0/ref/Practice1.dll
