@@ -23,16 +23,15 @@ namespace Practice1
         {
             return id;
         }
-		public void CrateTaxiLicense(string plate)
+		public void CrateTaxiLicense(Taxi taxi)
 		{
-			Taxi taxi = new Taxi(plate);
 			taxiList.Add(taxi);
 		}
-		public void RemoveTaxiLicense(string plate)
+		public void RemoveTaxiLicense(Taxi taxi)
 		{
-			if (taxiList.Contains(Taxi(plate)))
+			if (taxiList.Contains(taxi))
 			{
-				taxiList.Remove(Taxi(plate));
+				taxiList.Remove(taxi);
             }
 		}
 		public string WriteMessage(string message)
