@@ -1,6 +1,6 @@
 ﻿namespace Practice1
 {
-    class Taxi : MatricVehicle
+    public class Taxi : MatricVehicle
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances.
         private static string typeOfVehicle = "Taxi";

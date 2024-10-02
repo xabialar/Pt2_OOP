@@ -29,7 +29,7 @@ namespace Practice1
 		{
 			foreach (PoliceCar police in policeCars)
 			{
-				if (police.IsPatrolling == true)
+				if (police.IsPatrolling())
 				{
 					police.StartFollowing(plate);
 				}

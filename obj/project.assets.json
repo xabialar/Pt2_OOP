@@ -8,26 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\migue\\.nuget\\packages\\": {}
+    "/Users/xabieralbizuarias/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\migue\\Documents\\CS_code\\P1-vehicle_example\\Practice1.csproj",
+      "projectUniqueName": "/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/Practice1.csproj",
       "projectName": "Practice1",
-      "projectPath": "C:\\Users\\migue\\Documents\\CS_code\\P1-vehicle_example\\Practice1.csproj",
-      "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\migue\\Documents\\CS_code\\P1-vehicle_example\\obj\\",
+      "projectPath": "/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/Practice1.csproj",
+      "packagesPath": "/Users/xabieralbizuarias/.nuget/packages/",
+      "outputPath": "/Users/xabieralbizuarias/Documents/imat/3/1_cuatri/ParadigmasP/pts/pt2/Pt2_OOP/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/xabieralbizuarias/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -66,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

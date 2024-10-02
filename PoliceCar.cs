@@ -1,9 +1,9 @@
 ﻿namespace Practice1
 {
-    class PoliceCar : MatricVehicle
+    public class PoliceCar : MatricVehicle
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances
-        private const string typeOfVehicle = "Police Car";
+        private static string typeOfVehicle = "Police Car";
         private PoliceStation policeStation;
         private SpeedRadar? speedRadar;
         private string followedPlate;
@@ -30,9 +30,9 @@
             }
         }
 
-        public void UseRadar(Vehicle vehicle)
+        public void UseRadar(MatricVehicle vehicle)
         {
-            if (sppedRadar == null)
+            if (speedRadar == null)
             {
                 Console.WriteLine(WriteMessage($"has no radar."));
             }
