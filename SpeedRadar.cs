@@ -21,17 +21,19 @@
             speed = vehicle.GetSpeed();
             SpeedHistory.Add(speed);
         }
-        
-        public string GetLastReading()
+
+        public bool GetLastReading()
         {
+            bool above_speed;
             if (speed > legalSpeed)
             {
-                return WriteMessage("Catched above legal speed.");
+                above_speed = true;
             }
             else
             {
-                return WriteMessage("Driving legally.");
+                above_speed = false;
             }
+            return above_speed;
         }
 
         public virtual string WriteMessage(string radarReading)

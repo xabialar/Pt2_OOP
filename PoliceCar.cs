@@ -4,16 +4,16 @@
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances
         private static string typeOfVehicle = "Police Car";
-        private PoliceStation policeStation;
+        private PoliceStationController policeStation;
         private SpeedRadar? speedRadar;
         private string followedPlate;
         private bool isFollowing;
         private bool hasRadar;
         private bool isPatrolling;
-        
-        
 
-        public PoliceCar(string plate, PoliceStation policeStation, bool hasRadar=false) : base(typeOfVehicle, plate)
+
+
+        public PoliceCar(string plate, PoliceStationController policeStation, bool hasRadar = false) : base(typeOfVehicle, plate)
         {
             this.policeStation = policeStation;
             followedPlate = "";
@@ -30,28 +30,40 @@
             }
         }
 
-        public void UseRadar(MatricVehicle vehicle)
+        private bool UseRadar(MatricVehicle vehicle)
+        {
+            bool above_speed;
+
+            speedRadar.TriggerRadar(vehicle);
+            above_speed = speedRadar.GetLastReading();
+
+            return above_speed;
+
+        }
+        public void JudgeMatricVehicle(MatricVehicle vehicle)
         {
             if (speedRadar == null)
             {
-                Console.WriteLine(WriteMessage($"has no radar."));
+                Console.WriteLine(WriteMessage($"tried to use radar, but has no radar."));
+            }
+            else if (IsPatrolling() == false)
+            {
+                Console.WriteLine(WriteMessage($"tried to use radar, but is no patrolling, so has no active radar."));
             }
             else
             {
-                if (isPatrolling)
+                bool above_speed = UseRadar(vehicle);
+                string meassurement;
+                if (above_speed)
                 {
-                    speedRadar.TriggerRadar(vehicle);
-                    string meassurement = speedRadar.GetLastReading();
-                    Console.WriteLine(WriteMessage($"Triggered radar. Result: {meassurement}"));
-                    if (meassurement == "Catched above legal speed.")
-                    {
-                        NotifyPoliceStation(vehicle.GetPlate());
-                    }
+                    Console.WriteLine(WriteMessage($"Triggered radar to {vehicle.GetPlate()} :Catched driving ilegally"));
+                    NotifyPoliceStation(vehicle.GetPlate());
                 }
                 else
                 {
-                    Console.WriteLine(WriteMessage($"has no active radar."));
+                    Console.WriteLine(WriteMessage($"Triggered radar to {vehicle.GetPlate()} :Driving legally"));
                 }
+
             }
 
         }
@@ -91,7 +103,7 @@
         {
             if (speedRadar == null)
             {
-                Console.WriteLine(WriteMessage("has no radar"));
+                Console.WriteLine(WriteMessage("tried to report radar history, but has no radar"));
             }
             else
             {
@@ -107,16 +119,19 @@
         {
             isFollowing = true;
             followedPlate = plate;
+            Console.WriteLine(WriteMessage($"Following plate {plate}"));
         }
-        public void StopFollowing()
+        public void StopFollowing(string plate)
         {
             isFollowing = false;
+            followedPlate = "";
+            Console.WriteLine(WriteMessage($"Stopped following plate {plate}"));
         }
 
-        public void NotifyPoliceStation(string plate)
+        private void NotifyPoliceStation(string plate)
         {
-            Console.WriteLine(WriteMessage($"Follow plate: {plate}"));
-            policeStation.OrderFollowPlate(plate);
+            policeStation.SetAlert(true);
+            policeStation.SetPlate(plate);
         }
     }
 }

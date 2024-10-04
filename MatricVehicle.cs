@@ -1,13 +1,13 @@
 ﻿using System;
 namespace Practice1
 {
-	public abstract class MatricVehicle:Vehicle
-	{
+    public abstract class MatricVehicle : Vehicle
+    {
         private string plate;
-        public MatricVehicle(string typeOfVehicle, string plate): base(typeOfVehicle)
-		{
-			this.plate = plate;
-		}
+        public MatricVehicle(string typeOfVehicle, string plate) : base(typeOfVehicle)
+        {
+            this.plate = plate;
+        }
 
         public override string ToString()
         {
@@ -19,4 +19,3 @@ namespace Practice1
         }
     }
 }
-
